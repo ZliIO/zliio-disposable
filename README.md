@@ -1,6 +1,5 @@
 # 🗑📮🌍 Disposable Email Verification Tool
 
----
 This is a disposable email content verification tool package, implemented using the [disposable-email-domains ↗](https://github.com/disposable/disposable-email-domains) library provided by [Github/Disposable ↗](https://github.com/disposable).
 
 The aim is to provide a means of detecting temporary email services provided by providers such as [10MinuteMail ↗](http://10minutemail.com/) , [GuerrillaMail ↗](https://www.guerrillamail.com/) , and determining whether an email is a disposable email.
