@@ -40,6 +40,17 @@ You can set the black and white lists of email domains by configuring the **doma
 
 To ensure the update of [disposable-email-domains ↗](https://github.com/disposable/disposable-email-domains), we also provide the **_refreshDisposableDomains()_** method in the Disposable object instance to obtain the latest configuration list. However, we do not recommend frequent calls to this method due to the relatively high cost and long execution time of updates. We suggest that you call this method once after creating the **Disposable** _object instance_ to ensure the validity of the list.
 
+~~~java
+Disposable disposable = new Disposable();
+// Do refresh
+disposable.refreshDisposableDomains();
+~~~
+When the update is successful, you will see the following message displayed in the console.
+~~~shell
+[main] INFO com.zliio.disposable.DomainsLibraryManager - DomainsLibraryManager :: Added : 54 Domain(s)
+[main] INFO com.zliio.disposable.DomainsLibraryManager - DomainsLibraryManager :: Removed : 75 Domain(s)
+~~~
+
 For convenience, we provide separate solutions to validate email format, validate domain names, and validate disposable email addresses.
 
 ## [Domains ↗](https://github.com/disposable/disposable-email-domains)

@@ -18,5 +18,6 @@ public class DisposableTest {
         // False
         System.out.println(disposable.validate("test@0-mail.com"));
         // False
+        disposable.refreshDisposableDomains();
     }
 }
