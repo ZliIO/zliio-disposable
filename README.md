@@ -1,4 +1,4 @@
-# 🗑📮🌍 Disposable Email Verification Tool
+# 🗑📮🌍 Disposable Email Verification Tool [Java SDK]
 
 This is a disposable email content verification tool package, implemented using the [disposable-email-domains ↗](https://github.com/disposable/disposable-email-domains) library provided by [Github/Disposable ↗](https://github.com/disposable).
 
