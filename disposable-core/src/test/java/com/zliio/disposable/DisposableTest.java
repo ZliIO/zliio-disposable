@@ -1,5 +1,9 @@
 package com.zliio.disposable;
 
+
+import com.zliio.disposable.core.SuffixTrieDisposable;
+import com.zliio.disposable.loader.HttpTxtDomainLoader;
+
 /**
  * Disposable Test.
  *
@@ -8,7 +12,7 @@ package com.zliio.disposable;
  **/
 public class DisposableTest {
     public static void main(String[] args) {
-        Disposable disposable = new Disposable();
+        Disposable disposable = new SuffixTrieDisposable(new HttpTxtDomainLoader());
 
         System.out.println(disposable.validate("gmail.com"));
         // True
@@ -17,7 +21,7 @@ public class DisposableTest {
         System.out.println(disposable.validate("dsa@zliio.🤔️"));
         // False
         System.out.println(disposable.validate("test@0-mail.com"));
-        // False
-        disposable.refreshDisposableDomains();
+//        // False
+//        disposable.refreshDisposableDomains();
     }
 }

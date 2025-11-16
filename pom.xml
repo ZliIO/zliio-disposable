@@ -6,10 +6,15 @@
 
     <groupId>com.zliio.disposable</groupId>
     <artifactId>disposable</artifactId>
-    <version>1.0</version>
+    <version>2.0</version>
+    <packaging>pom</packaging>
 
     <name>Disposable Email Verification Tool [Java SDK]</name>
     <url>https://github.com/ZliIO/zliio-disposable</url>
+    <modules>
+        <module>disposable-core</module>
+        <module>disposable-springboot</module>
+    </modules>
     <description>This is a disposable email content verification tool package, implemented using the
         disposable-email-domains ↗ library provided by Github/Disposable ↗.
     </description>
@@ -30,7 +35,7 @@
 
     <developers>
         <developer>
-            <name>Leo</name>
+            <name>1TSC</name>
             <email>zhili.c.w@gmail.com</email>
             <organization>ZliIO</organization>
         </developer>
@@ -45,33 +50,6 @@
         <slf4j.version>2.0.7</slf4j.version>
         <slf4j-reload4j.version>2.0.7</slf4j-reload4j.version>
     </properties>
-
-    <dependencies>
-        <!-- LOG:SLF4J -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>${slf4j.version}</version>
-            <scope>test</scope>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-reload4j</artifactId>
-            <version>2.0.7</version>
-            <scope>test</scope>
-            <optional>true</optional>
-        </dependency>
-    </dependencies>
-
 
     <build>
         <plugins>

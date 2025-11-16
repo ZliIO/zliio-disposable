@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.zliio.disposable</groupId>
+        <artifactId>disposable</artifactId>
+        <version>2.0</version>
+    </parent>
+    <artifactId>disposable-springboot-starter</artifactId>
+    <name>Disposable::Springboot</name>
+    <url>https://github.com/ZliIO/zliio-disposable</url>
+
+    <properties>
+        <spring-boot.version>3.0.1</spring-boot.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.zliio.disposable</groupId>
+            <artifactId>disposable-core</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${spring-boot.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+</project>
