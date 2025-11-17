@@ -99,7 +99,7 @@ public class BuiltinDomainLoader implements DisposableDomainLoader {
      * @throws IllegalStateException wrapping an IOException on failure.
      */
     private Set<String> loadDomainsFromResource() {
-        try (InputStream is = getClass().getResourceAsStream(this.path);) {
+        try (InputStream is = getClass().getResourceAsStream(this.path)) {
             if (is == null) {
                 throw new IOException("Classpath resource not found: " + this.path);
             }
