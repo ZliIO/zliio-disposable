@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  * @since 2025/11/16
  */
 @Configuration
-@ConfigurationProperties(prefix = "disposable")
+@ConfigurationProperties(prefix = "domain.disposable")
 public class DomainDisposableProperties {
     /**
      * The algorithm type used for checking disposable domains.
@@ -33,10 +33,10 @@ public class DomainDisposableProperties {
     public static class DomainLoaderConfig {
         /**
          * The type of loader to use for the domain list.
-         * Supported values are "built-in" (uses the default list packaged with the application)
+         * Supported values are "builtin" (uses the default list packaged with the application)
          * or "http" (fetches the list from a remote URL). Defaults to "built-in".
          */
-        private String type = "built-in";
+        private String type = "builtin";
         /**
          * The specific path or URL for the domain list. This is optional.
          * <p>

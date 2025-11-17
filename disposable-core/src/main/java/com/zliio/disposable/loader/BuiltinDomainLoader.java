@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Collections;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -39,12 +40,29 @@ public class BuiltinDomainLoader implements DisposableDomainLoader {
     private volatile Set<String> domains;
 
     /**
+     * Resource Path.
+     */
+    private final String path;
+
+    /**
      * Constructs a new BuiltinDomainLoader. The domain data is not loaded
      * at construction time but will be loaded on the first request.
      */
     public BuiltinDomainLoader() {
         // The 'domains' field is intentionally left null here for lazy loading.
+        this.path = BUILTIN_DOMAINS_RESOURCE_PATH;
     }
+
+    /**
+     * Constructs a domain loader with a specific Path ( Classpath:// ).
+     *
+     * @param path the Path of the .txt file to fetch domains from. Must not be null.
+     * @throws NullPointerException if the path is null.
+     */
+    public BuiltinDomainLoader(String path) {
+        this.path = Objects.requireNonNull(path, "Path cannot be null.");
+    }
+
 
     /**
      * Returns an immutable set of built-in disposable email domains.
@@ -66,7 +84,7 @@ public class BuiltinDomainLoader implements DisposableDomainLoader {
             synchronized (this) {
                 // Second check (with lock): Ensures initialization happens only once.
                 if (domains == null) {
-                    log.info("Lazy-loading built-in domains from '" + BUILTIN_DOMAINS_RESOURCE_PATH + "'...");
+                    log.info("Lazy-loading built-in domains from {}...'", this.path);
                     domains = loadDomainsFromResource();
                 }
             }
@@ -81,9 +99,9 @@ public class BuiltinDomainLoader implements DisposableDomainLoader {
      * @throws IllegalStateException wrapping an IOException on failure.
      */
     private Set<String> loadDomainsFromResource() {
-        try (InputStream is = getClass().getResourceAsStream(BUILTIN_DOMAINS_RESOURCE_PATH)) {
+        try (InputStream is = getClass().getResourceAsStream(this.path);) {
             if (is == null) {
-                throw new IOException("Classpath resource not found: " + BUILTIN_DOMAINS_RESOURCE_PATH);
+                throw new IOException("Classpath resource not found: " + this.path);
             }
             Set<String> loadedDomains = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))
                     .lines()
