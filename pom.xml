@@ -14,6 +14,7 @@
     <modules>
         <module>disposable-core</module>
         <module>disposable-springboot</module>
+        <module>disposable-example</module>
     </modules>
     <description>This is a disposable email content verification tool package, implemented using the
         disposable-email-domains ↗ library provided by Github/Disposable ↗.

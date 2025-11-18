@@ -113,12 +113,15 @@ public final class DisposableChecker {
      * or {@link Optional#empty()} otherwise.
      */
     public static Optional<String> getDomainFromEmail(String emailAddress) {
-        if (!isEmail(emailAddress)) {
+        if (!isEmail(emailAddress) && !isDomain(emailAddress)) {
             return Optional.empty();
+        } else if (isDomain(emailAddress)) {
+            return Optional.of(emailAddress);
+        } else {
+            // At this point, we know emailAddress is not null or blank and is a valid email.
+            int atIndex = emailAddress.lastIndexOf('@');
+            return Optional.of(emailAddress.substring(atIndex + 1));
         }
-        // At this point, we know emailAddress is not null or blank and is a valid email.
-        int atIndex = emailAddress.lastIndexOf('@');
-        return Optional.of(emailAddress.substring(atIndex + 1));
     }
 
     /**

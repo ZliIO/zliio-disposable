@@ -1,0 +1,6 @@
+domain:
+  disposable:
+    algorithm: "SuffixTrie"
+    loader:
+      type: "http"
+      path: "https://disposable.github.io/disposable-email-domains/domains.txt"

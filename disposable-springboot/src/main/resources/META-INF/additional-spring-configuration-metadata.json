@@ -1,0 +1,38 @@
+{
+  "groups": [
+    {
+      "name": "domain.disposable",
+      "type": "com.zliio.disposable.springboot.DomainDisposableProperties",
+      "description": "Configuration properties for disposable domain checking."
+    },
+    {
+      "name": "domain.disposable.loader",
+      "type": "com.zliio.disposable.springboot.DomainDisposableProperties$DomainLoaderConfig",
+      "sourceType": "com.zliio.disposable.springboot.DomainDisposableProperties",
+      "description": "Configuration for the disposable domain list loader."
+    }
+  ],
+  "properties": [
+    {
+      "name": "domain.disposable.algorithm",
+      "type": "java.lang.String",
+      "description": "The algorithm type used for checking disposable domains. Supported values are \"BloomFilter\" or \"SuffixTrie\".",
+      "sourceType": "com.zliio.disposable.springboot.DomainDisposableProperties",
+      "defaultValue": "SuffixTrie"
+    },
+    {
+      "name": "domain.disposable.loader.type",
+      "type": "java.lang.String",
+      "description": "The type of loader to use for the domain list. Supported values are \"builtin\" or \"http\".",
+      "sourceType": "com.zliio.disposable.springboot.DomainDisposableProperties$DomainLoaderConfig",
+      "defaultValue": "builtin"
+    },
+    {
+      "name": "domain.disposable.loader.path",
+      "type": "java.lang.String",
+      "description": "The specific path or URL for the domain list. E.g., a URL for 'http' type or a classpath resource for custom types.",
+      "sourceType": "com.zliio.disposable.springboot.DomainDisposableProperties$DomainLoaderConfig"
+    }
+  ],
+  "hints": []
+}

@@ -65,6 +65,7 @@ public class HttpTxtDomainLoader implements DisposableDomainLoader {
     public Set<String> getDomains() {
         HttpURLConnection connection = null;
         try {
+            log.info("Try fetch domains. from URL: {}", this.url);
             URL requestUrl = new URL(this.url);
             connection = (HttpURLConnection) requestUrl.openConnection();
             // Set robust timeouts to prevent the application from hanging on network issues.
@@ -82,7 +83,7 @@ public class HttpTxtDomainLoader implements DisposableDomainLoader {
                             .collect(Collectors.toSet());
                 }
             } else {
-                log.warn("Failed to fetch domains. HTTP Response Code: {} from URL: {}", responseCode, this.url);
+                log.error("Failed to fetch domains. HTTP Response Code: {} from URL: {}", responseCode, this.url);
                 return Collections.emptySet();
             }
         } catch (IOException e) {

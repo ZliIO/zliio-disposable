@@ -7,7 +7,7 @@ import com.zliio.disposable.core.SuffixTrieDisposable;
 import com.zliio.disposable.loader.BuiltinDomainLoader;
 import com.zliio.disposable.loader.HttpTxtDomainLoader;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -101,8 +101,8 @@ public class DomainDisposableAutoConfiguration {
      * This ensures that the checker is not created without a valid domain source.
      */
     @Configuration(proxyBeanMethods = false)
-    @ConditionalOnBean(DisposableDomainLoader.class)
     @ConditionalOnMissingBean(Disposable.class)
+    @AutoConfigureAfter(DomainLoaderConfiguration.class)
     static class DisposableCheckerConfiguration {
         /**
          * Creates a {@link SuffixTrieDisposable} bean if the algorithm is configured as 'SuffixTrie'
