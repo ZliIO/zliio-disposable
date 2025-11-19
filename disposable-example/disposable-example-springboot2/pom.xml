@@ -49,7 +49,7 @@
                         <id>load-domains</id>
                         <phase>compile</phase>
                         <goals>
-                            <goal>auto-loading</goal>
+                            <goal>loading</goal>
                         </goals>
                     </execution>
                 </executions>
