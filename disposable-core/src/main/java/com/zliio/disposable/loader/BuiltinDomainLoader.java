@@ -34,7 +34,7 @@ import java.util.stream.Collectors;
  * @since 2025/11/16
  */
 public class BuiltinDomainLoader implements DisposableDomainLoader {
-    private static final String BUILTIN_DOMAINS_RESOURCE_PATH = "/disposable/domains.txt";
+    private static final String BUILTIN_DOMAINS_RESOURCE_PATH = "/META-INF/disposable/domains.txt";
     // The 'volatile' keyword is crucial for the correctness of double-checked locking.
     // It ensures that writes to this variable are atomically visible to other threads.
     private volatile Set<String> domains;

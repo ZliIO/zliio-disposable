@@ -24,7 +24,7 @@ import java.net.URL;
  * @version 1.0
  * @since 2025/11/19
  */
-@Mojo(name = "auto-loading", defaultPhase = LifecyclePhase.COMPILE)
+@Mojo(name = "loading", defaultPhase = LifecyclePhase.GENERATE_RESOURCES)
 public class DomainsLoadingMojo extends AbstractMojo {
     /**
      * The URL from which to download the domains.txt file.

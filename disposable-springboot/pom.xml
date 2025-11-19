@@ -18,7 +18,7 @@
         <dependency>
             <groupId>com.zliio.disposable</groupId>
             <artifactId>disposable-core</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>

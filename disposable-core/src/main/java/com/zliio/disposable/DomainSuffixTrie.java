@@ -13,7 +13,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 /**
  * A thread-safe Trie (Prefix Tree) data structure specifically designed for storing and matching domain suffixes.
  * <p>
- * This class stores domains in a reversed manner (e.g., "example.com" is stored as "com" -> "example").
+ * This class stores domains in a reversed manner (e.g., "example.com" is stored as "com" - "example").
  * This structure allows for efficient suffix matching. For instance, if "example.com" is added,
  * matching "sub.example.com" will return {@code true}.
  * </p>

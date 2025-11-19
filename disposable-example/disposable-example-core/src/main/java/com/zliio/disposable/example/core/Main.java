@@ -31,7 +31,7 @@ public class Main {
     }
 
     public static void useCustomDomainTest() {
-        DisposableDomainLoader disposableDomainLoader = new BuiltinDomainLoader("/disposable/re-domains.txt");
+        DisposableDomainLoader disposableDomainLoader = new BuiltinDomainLoader("/META-INF/disposable/re-domains.txt");
         Disposable disposable = new SuffixTrieDisposable(disposableDomainLoader);
         tryValidate(disposable);
     }

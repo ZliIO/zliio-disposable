@@ -401,9 +401,6 @@ public class BloomFilter<T> {
         private final double bitUsageRatio;
         private final long currentElementCount;
 
-        /**
-         * Constructs a new configuration object.
-         */
         public BloomFilterConfig(int bitSize, int hashFunctions, long expectedElements,
                                  double targetFalsePositiveRate, double actualFalsePositiveRate,
                                  double bitUsageRatio, long currentElementCount) {

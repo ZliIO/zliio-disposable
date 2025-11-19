@@ -109,8 +109,7 @@ public final class DisposableChecker {
      * If valid, it returns the domain portion. Otherwise, it returns an empty Optional.
      *
      * @param emailAddress The potential email address string.
-     * @return An {@link Optional<String>} containing the domain if the input is a valid email,
-     * or {@link Optional#empty()} otherwise.
+     * @return An Optional String containing the domain if the input is a valid email, or Optional#empty() otherwise.
      */
     public static Optional<String> getDomainFromEmail(String emailAddress) {
         if (!isEmail(emailAddress) && !isDomain(emailAddress)) {
