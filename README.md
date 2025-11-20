@@ -47,8 +47,8 @@ disposable.refreshDisposableDomains();
 ~~~
 When the update is successful, you will see the following message displayed in the console.
 ~~~shell
-[main] INFO com.zliio.disposable.DomainsLibraryManager - DomainsLibraryManager :: Added : 54 Domain(s)
-[main] INFO com.zliio.disposable.DomainsLibraryManager - DomainsLibraryManager :: Removed : 75 Domain(s)
+[main] INFO com.zliio.disposable.bak.DomainsLibraryManager - DomainsLibraryManager :: Added : 54 Domain(s)
+[main] INFO com.zliio.disposable.bak.DomainsLibraryManager - DomainsLibraryManager :: Removed : 75 Domain(s)
 ~~~
 
 For convenience, we provide separate solutions to validate email format, validate domain names, and validate disposable email addresses.

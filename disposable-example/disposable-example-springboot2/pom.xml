@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.18</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <artifactId>disposable-example-springboot2</artifactId>
+    <name>Disposable::Example:Springboot2</name>
+    <version>2.0-SNAPSHOT</version>
+    <properties>
+        <java.version>8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.zliio.disposable</groupId>
+            <artifactId>disposable-spring-boot-starter</artifactId>
+            <version>2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.zliio.disposable</groupId>
+                <artifactId>disposable-plugin</artifactId>
+                <version>2.0</version>
+                <executions>
+                    <execution>
+                        <id>load-domains</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>loading</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <domainsUrl>
+                        https://disposable.github.io/disposable-email-domains/domains.txt
+                    </domainsUrl>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
